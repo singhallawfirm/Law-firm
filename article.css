@@ -1,0 +1,170 @@
+/* article.css (Updated) */
+
+/* --- Article Modal Styles --- */
+.article-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.article-modal-overlay.active {
+    display: flex;
+}
+
+.article-modal-content {
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 40px 50px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease-out;
+    max-height: 90vh; 
+    overflow-y: auto; 
+}
+
+body.dark-theme .article-modal-content {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    border: 1px solid #1e293b;
+}
+
+/* --- Custom Scrollbar Styles --- */
+.article-modal-content::-webkit-scrollbar {
+    width: 12px;
+}
+.article-modal-content::-webkit-scrollbar-track {
+    background: #e9ecef;
+    border-radius: 10px;
+}
+.article-modal-content::-webkit-scrollbar-thumb {
+    background: #adb5bd;
+    border-radius: 10px;
+    border: 3px solid #e9ecef;
+}
+.article-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #6c757d;
+}
+body.dark-theme .article-modal-content::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+body.dark-theme .article-modal-content::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-color: #0f172a;
+}
+body.dark-theme .article-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+@keyframes fadeIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-article-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #64748b;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    line-height: 1;
+    z-index: 2;
+}
+.close-article-btn:hover {
+    color: #1e293b;
+    transform: rotate(90deg);
+}
+body.dark-theme .close-article-btn { color: #94a3b8; }
+body.dark-theme .close-article-btn:hover { color: #ffffff; }
+
+.article-body h1 {
+    font-size: 2.8rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    padding-right: 40px;
+}
+.article-body .article-meta {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+body.dark-theme .article-body .article-meta { color: #94a3b8; }
+.article-body img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+.article-body p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.article-body h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 5px;
+}
+body.dark-theme .article-body h2 { border-bottom-color: #334155; }
+
+/* --- Article Navigation Arrows --- */
+.article-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1001;
+}
+
+.article-nav.visible {
+    display: flex; /* Made visible by JS */
+}
+
+body.dark-theme .article-nav {
+    background-color: rgba(15, 23, 42, 0.8);
+    border-color: #334155;
+    color: #e2e8f0;
+}
+.article-nav:hover {
+    transform: translateY(-50%) scale(1.1);
+    background-color: #ffffff;
+}
+body.dark-theme .article-nav:hover { background-color: #1e293b; }
+
+.article-nav.prev { left: 3vw; }
+.article-nav.next { right: 3vw; }
+
+@media (max-width: 1200px) {
+    .article-nav { display: none !important; } /* Hide on smaller screens */
+}

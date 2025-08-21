@@ -1,0 +1,56 @@
+/* video.css */
+
+.video-modal-content {
+    width: 90%;
+    max-width: 960px; /* Larger max-width for a better video experience */
+    padding: 15px;
+    background-color: #000; /* Black background for a cinematic feel */
+    border: none;
+    /* Remove vertical overflow handling, as the aspect ratio box will manage the height */
+    overflow-y: visible; 
+}
+
+.video-body {
+    position: relative;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for the video player */
+    background-color: #111; /* Dark background for the video area */
+}
+
+.video-body iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-body .video-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.watch-on-youtube-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.watch-on-youtube-btn:hover {
+    background-color: #cc0000;
+}

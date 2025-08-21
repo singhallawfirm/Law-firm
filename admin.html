@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Post Content</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <div class="header-brand">
+                <div class="logo"><i class="fa-solid fa-user-shield"></i></div>
+                <div class="brand-text">
+                    <span class="brand-title">Admin Panel</span>
+                    <span class="brand-subtitle">Content Publisher</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="editor-container">
+            <h1>Create New Post</h1>
+            <form id="post-form">
+                <div class="form-group">
+                    <label for="post-type">Content Type</label>
+                    <select id="post-type" name="post-type">
+                        <option value="article">Article</option>
+                        <option value="news">News</option>
+                        <option value="video">Video</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" placeholder="Enter the title" required>
+                </div>
+
+                <div id="video-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="post-video-url">YouTube Video URL</label>
+                        <input type="url" id="post-video-url" placeholder="https://www.youtube.com/watch?v=...">
+                    </div>
+                </div>
+
+                <div class="form-group image-uploader-group">
+                    <label id="thumbnail-label">Thumbnail Image</label>
+                    <div class="image-upload-options">
+                        <label><input type="radio" name="thumbnail-source" value="url" checked> URL</label>
+                        <label><input type="radio" name="thumbnail-source" value="upload"> Upload</label>
+                    </div>
+                    <input type="url" id="post-thumbnail-url" class="image-input" placeholder="https://example.com/thumbnail.jpg">
+                    <input type="file" id="post-thumbnail-upload" class="image-input" style="display: none;" accept="image/*">
+                    <img id="thumbnail-preview" class="image-preview" src="" alt="Thumbnail Preview">
+                </div>
+
+                <div id="content-fields">
+                    <div class="form-group">
+                        <label for="post-author">Author / Meta</label>
+                        <input type="text" id="post-author" placeholder="e.g., Published by Jane Doe">
+                    </div>
+                    <div class="form-group image-uploader-group">
+                        <label>Main Post Image (Optional)</label>
+                        <div class="image-upload-options">
+                            <label><input type="radio" name="main-image-source" value="url" checked> URL</label>
+                            <label><input type="radio" name="main-image-source" value="upload"> Upload</label>
+                        </div>
+                        <input type="url" id="post-main-image-url" class="image-input" placeholder="https://example.com/main-image.jpg">
+                        <input type="file" id="post-main-image-upload" class="image-input" style="display: none;" accept="image/*">
+                        <img id="main-image-preview" class="image-preview" src="" alt="Main Image Preview">
+                    </div>
+
+                    <div class="editor-toolbar">
+                        <button type="button" class="toolbar-btn" data-command="bold"><i class="fas fa-bold"></i></button>
+                        <button type="button" class="toolbar-btn" data-command="italic"><i class="fas fa-italic"></i></button>
+                        <button type="button" class="toolbar-btn" data-command="underline"><i class="fas fa-underline"></i></button>
+                        <button type="button" class="toolbar-btn" data-command="insertUnorderedList"><i class="fas fa-list-ul"></i></button>
+                        <button type="button" class="toolbar-btn" data-command="createLink"><i class="fas fa-link"></i></button>
+                        <button type="button" class="toolbar-btn" id="insert-image-btn"><i class="fas fa-image"></i></button>
+                        <select class="toolbar-select" data-command="fontSize">
+                            <option value="3">Normal</option>
+                            <option value="5">Heading</option>
+                            <option value="2">Small</option>
+                        </select>
+                    </div>
+                    
+                    <input type="file" id="image-upload-input" accept="image/*, image/gif" style="display: none;">
+                    <div id="post-content" class="editor-content" contenteditable="true" role="textbox" aria-multiline="true"></div>
+                </div>
+
+                <button type="submit" id="publish-btn" class="publish-btn">Publish Content</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

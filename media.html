@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Publication - Singhal Law Firm</title>
+    <link rel="icon" type="image/x-icon" href="Media/logo web.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pagination.css">
+    <link rel="stylesheet" href="news.css"> 
+    <link rel="stylesheet" href="video.css">
+    <link rel="stylesheet" href="article.css">
+    <link rel="stylesheet" href="clickable-card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="home.html" class="header-brand-link">
+                <div class="header-brand">
+                    <div class="logo"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="brand-text">
+                        <span class="brand-title">Singhal Law Firm</span>
+                        <span class="brand-subtitle">Legal Excellence</span>
+                    </div>
+                </div>
+            </a>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="firm.html">The Firm</a></li>
+                    <li><a href="media.html" class="active">Media & Publication</a></li>
+                    <li><a href="practices.html">Practices</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="search-toggle" class="search-toggle-button" aria-label="Toggle search"><i class="fa-solid fa-search"></i></button>
+                <input type="search" id="search-input" class="search-input" placeholder="Search...">
+                <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle theme"><i class="fa-solid fa-sun"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="media-section">
+            <div class="media-header">
+                <h1>Media & Publication</h1>
+                <p>Stay informed with our latest articles, news updates, and video content from the legal world.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="media-tabs">
+                <button class="tab-link active" data-tab="articles">
+                    <i class="fa-solid fa-newspaper"></i> Articles
+                </button>
+                <button class="tab-link" data-tab="news">
+                    <i class="fa-solid fa-bullhorn"></i> News
+                </button>
+                <button class="tab-link" data-tab="videos">
+                    <i class="fa-solid fa-video"></i> Videos
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="articles" class="tab-content active">
+                <div class="media-grid" id="articles-grid"></div>
+                <div class="pagination-container" id="articles-pagination"></div>
+            </div>
+            <div id="news" class="tab-content">
+                <div class="media-grid" id="news-grid"></div>
+                 <div class="pagination-container" id="news-pagination"></div>
+            </div>
+            <div id="videos" class="tab-content">
+                 <div class="media-grid" id="videos-grid"></div>
+                 <div class="pagination-container" id="videos-pagination"></div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Article Modal -->
+    <div id="article-modal" class="article-modal-overlay">
+        <div class="article-modal-content">
+            <button id="close-article-btn" class="close-article-btn">&times;</button>
+            <article id="article-modal-body" class="article-body"></article>
+        </div>
+    </div>
+    <button id="prev-article" class="article-nav prev">&larr;</button>
+    <button id="next-article" class="article-nav next">&rarr;</button>
+
+    <!-- News Modal -->
+    <div id="news-modal" class="news-modal-overlay">
+        <div class="news-modal-content">
+            <button id="close-news-btn" class="close-news-btn">&times;</button>
+            <div id="news-modal-body" class="news-body"></div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="news-modal-overlay">
+        <div class="news-modal-content video-modal-content">
+            <button id="close-video-btn" class="close-news-btn">&times;</button>
+            <div id="video-modal-body" class="video-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="new-site-footer">
+        <div class="footer-main">
+            <div class="footer-column about">
+                <a href="home.html" class="footer-brand-link">
+                    <div class="footer-brand">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <div class="brand-text">
+                            <span class="brand-title">Singhal Law Firm</span> <br>
+                            <span class="brand-subtitle">Professional Legal Services</span>
+                        </div>
+                    </div>
+                </a>
+                <p>Providing exceptional legal services with commitment to justice and client satisfaction.</p>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column links">
+                <h4>Quick Links</h4>
+                <ul>  
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="firm.html">The Firm</a></li>
+                    <li><a href="media.html">Media and Publication</a></li>
+                    <li><a href="practices.html">Practices</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Practice Areas</h4>
+                <ul>
+                    <li><a href="#">Civil Litigation</a></li>
+                    <li><a href="#">Criminal Defense</a></li>
+                    <li><a href="#">Property Law</a></li>
+                    <li><a href="#">Corporate Law</a></li>
+                    <li><a href="#">Family Law</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Singhal Law Firm Services.</p>
+            <p> All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
